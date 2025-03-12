@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./ddl/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    environment:
+      POSTGRES_DB: "cars-db"
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "v1234567"
+

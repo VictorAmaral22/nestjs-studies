@@ -1,22 +1,23 @@
 import { Injectable } from "@nestjs/common";
+import { CreateCar, getFilters, getOrderBy, GetCar, CreateBrand } from "./cars.interfaces";
+import { Brand } from "./entities/brand.entity";
+import { Car } from "./entities/car.entity";
 
 @Injectable()
 export class CarsService {
-    create(car: CreateCar) {
-        return car;
+    create(car: CreateCar): Promise<Car> {
+        return new Promise((resolve, reject) => {
+            
+        })
     }
 
-    get(filters: getFilters, order_by: getOrderBy[]): GetCar[] {
+    get(filters: getFilters, order_by: getOrderBy): GetCar[] {
         return [];
     }
 
     getById(id: number): GetCar | null {
         return null;
     }
-
-    // update(id: number, updateCar: UpdateCar) {
-    //     return updateCar;
-    // }
 
     createBrand(brand: CreateBrand) {
         return brand;
