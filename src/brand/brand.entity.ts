@@ -1,17 +1,25 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Car } from "./car.entity";
+import { Car } from "../car/car.entity";
 
 @Entity()
 export class Brand extends BaseEntity {
     @PrimaryGeneratedColumn()
-    @ManyToOne(() => Car, (car) => car.brand_id)
+    // @ManyToOne(() => Car, (car) => car.brand_id)
     @ApiProperty({ example: 1 })
     id: number;
 
     @Column({ nullable: false, type: 'varchar', length: 255 })
     @ApiProperty({ example: 'Chevrolet' })
     name: string;
+
+    @Column({ nullable: false, type: 'varchar', length: 255 })
+    @ApiProperty({ example: 'https://logodownload.org/wp-content/uploads/2014/09/chevrolet-logo-1.png' })
+    logo: string;
+
+    @Column({ nullable: false, type: 'varchar', length: 255 })
+    @ApiProperty({ example: 'United States' })
+    country: string;
 
     @Column({ nullable: false, type: "bool", default: true })
     @ApiProperty({ example: true })

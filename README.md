@@ -14,6 +14,14 @@ Check some observations on the framework [observations](docs/observations.md)
 $ npm install
 ```
 
+## Test database on Docker
+
+To run the dockerfile to create a test database, just run the following code snippet:
+
+```bash
+$ docker compose -f docker-compose-dev.yml up
+```
+
 ## Compile and run the project
 
 ```bash

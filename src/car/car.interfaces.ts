@@ -1,29 +1,24 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Brand } from "./entities/brand.entity";
+import { Brand } from "../brand/brand.entity";
 
-export class CreateCar {    
+export class CreateCar {
     @ApiProperty({ example: 1 })
     brand_id: number;
-    
+
     @ApiProperty({ example: 'Impala' })
     model: string;
-    
+
     @ApiProperty({ example: 1967 })
     year: number;
-    
+
     @ApiProperty({ example: 'black' })
     color: string;
-    
+
     @ApiProperty({ example: 55000 })
     price: number;
-    
+
     @ApiProperty({ example: 'https://vintageclassicos.com.br/wp-content/uploads/2023/10/Chevy-Impala-1967-4.jpeg' })
     photo: string;
-}
-
-export class CreateBrand {
-    @ApiProperty({ example: 'Chevrolet' })
-    name: string;
 }
 
 export class GetCar {
