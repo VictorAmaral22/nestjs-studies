@@ -10,4 +10,20 @@ services:
       POSTGRES_DB: "cars-db"
       POSTGRES_USER: "root"
       POSTGRES_PASSWORD: "v1234567"
-
+    networks:
+      - default  
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - default
+    env_file:
+      - ./.env
+networks:
+  default:
